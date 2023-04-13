@@ -27,10 +27,7 @@ import AppFooter from "./components/AppFooter.vue";
 
 <style lang="scss">
 @use "./style/general.scss" as *;
-AppMain{
-  position: relative;
-  z-index:4;
-}
+
 
 
 </style>

@@ -90,16 +90,22 @@ import { toValidAssetId } from '@vue/compiler-core';
   background-image: url(../assets/img/footer-bg.jpg);
   .container{
     position:relative;
-@include display-flex(space-between,center,0);
+       @include display-flex(space-between,center,0);
         color: white;
         .left{
-          @include display-flex(start,center,2rem);
+          // @include display-flex(start,start,1rem);
+          display: flex;
+          flex-direction: column;
+          flex-flow: column wrap;
+          height: 350px;
+          gap: 1rem;
           padding: $padding2;
           section{
-       li{
-        color: darkgray;
-       }
-       
+        l   li{
+              color: darkgray;
+              font-size: 0.8rem;
+            }
+      
       }
 
         }
@@ -135,7 +141,8 @@ import { toValidAssetId } from '@vue/compiler-core';
       width: 100px;
       height: 2rem;
       background-color:  rgb(36, 32, 32);
-      border:1.5px solid $bg-color-blue
+      border:1.5px solid $bg-color-blue;
+      cursor: pointer;
     }
   }
 }

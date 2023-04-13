@@ -3,8 +3,16 @@
     name:'AppHeader',
     data(){
         return{
-            navHeader:["characters","comics","movies","tv","games","collectibles","videos","fans","news","shop"]
+            navHeader:["characters","comics","movies","tv","games","collectibles","videos","fans","news","shop"],
+            active:null,
         }
+    },
+    methods:{
+        addActive(index){
+    
+    this.active=index
+      }
+     
     }
     
   }
@@ -18,7 +26,7 @@
             <img src="../assets/img/dc-logo.png" alt="">
         </a>
         <ul>
-            <li v-for="item in navHeader">
+            <li v-for="(item,index) in navHeader" :class="[active===index?'active':'']" @mouseenter="addActive(index)">
                 <a href="">{{ item }}</a>
             </li>
         </ul>
@@ -42,12 +50,22 @@ header{
             width: 70px;
         }
         ul{
+            height: 100px;
+           
             @include display-flex(space-between,center,1.5rem);
             color: rgb(38, 37, 37);
-            a{
+            li{
+            line-height: 95px;
+            margin: -5px;
+           
+                a{
                 text-transform: uppercase;
                 font-size: 0.8rem;
+               
+               
             }
+            }
+          
         }
     }
 }
